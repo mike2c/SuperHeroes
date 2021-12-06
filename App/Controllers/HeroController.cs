@@ -32,12 +32,12 @@ namespace App.Controllers
                 }
                 catch(ApiErrorException e)
                 {
-                    ViewBag["Error"] = e.Message;
+                    ViewBag.Error = e.Message;
                     return View();
                 }
                 catch(Exception e)
                 {
-                    ViewBag["Error"] = e.Message;
+                    ViewBag.Error = e.Message;
                     return View();
                 }
                 
@@ -58,7 +58,7 @@ namespace App.Controllers
             }
             catch (ApiErrorException e)
             {
-                ViewBag["Error"] = e.Message;
+                ViewBag.Error = e.Message;
                 return View();
             }
             catch (InvalidIdException e)
@@ -67,7 +67,7 @@ namespace App.Controllers
             }
             catch (Exception e)
             {
-                ViewBag["Error"] = e.Message;
+                ViewBag.Error = e.Message;
                 return View();
             }
         }
