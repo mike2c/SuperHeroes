@@ -1,0 +1,188 @@
+﻿@using Data.Models
+@model HeroModel
+
+@if (Model is null)
+{
+	<div class="bg-danger text-white rounded p-4">
+		<h3 class="text-center">
+			There was an error to retrieve data
+		</h3>
+	</div>
+}
+else
+{
+	@if (ViewBag.Error != null)
+	{
+		<div class="bg-danger rounded p-4">
+			<h3 class="text-white text-center p-4">
+				@ViewBag["error"]
+			</h3>
+		</div>
+	}
+	else
+	{
+		<div class="bg-white p-2 rounded mb-2">
+			<div class="row">
+				<div class="col-md-4 col-sm-12">
+					<img class="rounded img-fluid" src="@Model.Image.Url" alt="@Model.Image.Url" />
+				</div>
+				<div class="col-md-8 col-sm-12">
+
+					<div class="pr-3">
+						<h4 class="text-center mt-3 mb-3">
+							<b>@Model.Name</b>
+						</h4>
+
+						<p>
+							<b>FullName</b> <span class="float-right">@Model.Biography.FullName</span>
+						</p>
+
+						<p>
+							<b>Alter Egos</b> <span class="float-right">@Model.Biography.AlterEgos</span>
+						</p>
+
+						<p>
+							<b>Place of Birth</b> <span class="float-right">@Model.Biography.PlaceOfBirth</span>
+						</p>
+
+						<p>
+							<b>Publisher</b> <span class="float-right">@Model.Biography.Publisher</span>
+						</p>
+
+						<p>
+							<b>First Appareance</b> <span class="float-right">@Model.Biography.FirstAppareance</span>
+						</p>
+
+						<p>
+							<b>Alignment</b> <span class="float-right">@Model.Biography.Alignment</span>
+						</p>
+
+						<p>
+							<b>Aliases</b> <span class="float-right">@string.Join(',', Model.Biography.Aliases);</span>
+						</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6 col-sm-12">
+				<div class="bg-white p-2 rounded mb-2 p-3">
+					<h5 class="text-center" data-toggle="collapse" data-target="#PowerStats" aria-expanded="true" aria-controls="PowerStats">
+						<b>PowerStats</b>
+					</h5>
+					<div id="PowerStats" class="collapse show">
+						<p>
+							Intelligence <span class="float-right">@Model.PowerStats.Intelligence</span>
+						</p>
+						<hr />
+						<p>
+							Combar <span class="float-right">@Model.PowerStats.Combat</span>
+						</p>
+						<hr />
+						<p>
+							Durability <span class="float-right">@Model.PowerStats.Durability</span>
+						</p>
+						<hr />
+						<p>
+							Power <span class="float-right">@Model.PowerStats.Power</span>
+						</p>
+						<hr />
+						<p>
+							Speed <span class="float-right">@Model.PowerStats.Speed</span>
+						</p>
+						<hr />
+						<p>
+							Strength <span class="float-right">@Model.PowerStats.Strength</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-12">
+				<div class="bg-white p-2 rounded mb-2 p-3">
+					<h5 class="text-center" data-toggle="collapse" data-target="#Appeareance" aria-expanded="true" aria-controls="Appeareance">
+						<b>Appeareance</b>
+					</h5>
+					<div id="Appeareance" class="collapse show">
+						<p>
+							Eye color <span class="float-right">@Model.Appearance.EyeColor</span>
+						</p>
+						<hr />
+						<p>
+							Gender <span class="float-right">@Model.Appearance.Gender</span>
+						</p>
+						<hr />
+						<p>
+							Hair Color <span class="float-right">@Model.Appearance.HairColor</span>
+						</p>
+						<hr />
+						<p>
+							Race <span class="float-right">@Model.Appearance.Race</span>
+						</p>
+						<hr />
+						<p>
+							Height <span class="float-right">@string.Join(", ", Model.Appearance.Height)</span>
+						</p>
+						<hr />
+						<p>
+							Weight <span class="float-right">@string.Join(", ", Model.Appearance.Weight)</span>
+						</p>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="row">
+
+			<div class="col-md-6 col-sm-12">
+				<div class="bg-white p-2 rounded mb-2 p-3">
+					<h5 class="text-center" data-toggle="collapse" data-target="#Connections" aria-expanded="true" aria-controls="Connections">
+						<b>Connections</b>
+					</h5>
+					<div id="Connections" class="collapse show">
+						<p>
+							Group Affiliation
+						</p>
+						<p class="text-dark">
+							@Model.Connections.GroupAffiliation
+						</p>
+						<hr />
+						<p>
+							Relatives
+						</p>
+						<p class="text-dark">
+							@Model.Connections.Relatives
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-12">
+				<div class="bg-white p-2 rounded mb-2 p-3">
+					<h5 class="text-center" data-toggle="collapse" data-target="#Work" aria-expanded="true" aria-controls="Work">
+						<b>Work</b>
+					</h5>
+					<div id="Work" class="collapse show">
+						<p>
+							Base
+						</p>
+						<p class="text-dark">
+							@Model.Work.Base
+						</p>
+						<hr />
+						<p>
+							Ocupation
+						</p>
+						<p class="text-dark">
+							@Model.Work.Ocupation
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	}
+}
+
+<script>
+	$('.collapse').collapse();
+</script>

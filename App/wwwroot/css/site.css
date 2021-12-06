@@ -1,6 +1,11 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+:root {
+    --primary-color: #ffb703;
+    --secondary-color: #fb8501;
+}
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -29,6 +34,7 @@ a {
 html {
   font-size: 14px;
 }
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -38,6 +44,7 @@ html {
 .border-top {
   border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;
 }
@@ -59,13 +66,201 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    margin-top: 50px;
+    /*background-image: url('https://images.hdqwalls.com/download/iron-man-avengers-infinity-war-suit-4k-4x-1280x2120.jpg');*/
+    background-image: url('https://wallpaper.dog/large/20438584.jpg');
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #464646;
+    font-family: 'Kumbh Sans', sans-serif;
 }
+
+main {  
+    padding: 20px;  
+}
+
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
-  line-height: 60px; /* Vertically center the text there */
+  line-height: 40px;
+  background-color: white;
 }
+
+.footer p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.btn {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    border-radius: 20px;
+    outline: none;
+    font-weight: bold;
+}
+
+.btn-primary {
+    color: #000;
+    background-color: #f7ad1a;
+    border: 1px solid #f27f0c !important;
+}
+
+.btn-primary:hover {
+    background-color: #063f5c;
+    border: 1px solid #063f5c !important;
+}
+
+.navbar {
+    background-color: #f27f0c !important;
+    box-shadow: 1px 1px 4px black;
+    border-bottom: none;
+}
+
+.logo:hover {
+    box-shadow: 1px 1px 2px black;
+}
+
+.searchbox {
+    float: left;
+    width: 80%;
+    display: flex;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.searchbox:hover {
+    box-shadow: 0px 0px 3px 1px rgba(0,0,0, 0.7);
+    outline: none;
+    border: none;
+}
+
+.searchbox:focus {
+    box-shadow: 0px 0px 3px 1px rgba(0,0,0, 0.7);
+    outline: none;
+    border: none;
+}
+
+.searchbox:active {
+    box-shadow: 0px 0px 3px 1px rgba(0,0,0, 0.7);
+    outline: none;
+    border: none;
+}
+
+.searchbox > input:hover {
+    outline: none;
+    border: none;
+}
+
+.search-button {
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.search-button:focus {
+    outline: none !important;    
+}
+
+.search-button:active {
+    outline: none !important;    
+}
+    
+.search-button > span {
+    line-height: inherit;
+}
+
+.searchbox > input {
+    padding-left: 15px;
+    padding-right: 15px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.hero-list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;    
+    justify-content: space-around;
+    align-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.herocard {    
+    padding: 10px 10px;
+    width: 250px;
+    background-color: white;
+    border-radius: 10px;        
+    margin-bottom: 20px;
+    border: 1px solid gray;
+    box-shadow: 2px 2px 6px rgb(0 0 0 / 35%);
+    transition: all 0.3s;
+}
+
+.herocard:hover {
+    transform: scale(1.04);
+    box-shadow: 4px 5px 9px rgb(0 0 0 / 25%);
+    transition: all 0.3s;
+}
+
+.herocard-img {
+    display: block;
+    width: 100%;
+    max-height: 266px;
+}
+
+.herocard-title {
+    font-weight: bolder;
+    margin: 10px;
+    margin: 10px;
+}
+
+.character-info {
+    background-color: white;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    margin-bottom: 10px;    
+}
+
+.character-info p span {
+    display: block;
+    overflow: auto;
+}
+
+.character-info h5 {
+    cursor: pointer;
+}
+
+.home-button {
+    text-decoration: none !important;
+    display: block;
+    font-size: 35px;
+    color: white;
+    margin-right: 5px;
+    line-height: 1;
+    padding: 4px;
+}
+
+.home-button:hover {
+    background-color: #d45100;
+    border-radius: 50%;
+}
+
+.home-button span {
+    display: block;
+    font-size: inherit;
+}
+
+@media screen and (max-width: 24.9em) {
+    .herocard {
+        width: 100%;
+    }
+}
+
